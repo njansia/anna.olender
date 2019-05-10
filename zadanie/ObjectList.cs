@@ -23,7 +23,7 @@ namespace zadanie
             }
         }
 
-        public static void FindSerializableObjects()
+        public static List<@object> FindSerializableObjects()
         {
             List<@object> serializableList = new List<@object>();
 
@@ -49,6 +49,7 @@ namespace zadanie
                     serializableList.Add(o);
                 }
             }
+            return serializableList;
         }
     }
 }

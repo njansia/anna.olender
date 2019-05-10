@@ -13,7 +13,8 @@ namespace zadanie
         {
             string startupPath = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, "\\source\\input.xml");
             XmlReader.Read(startupPath);
-            ObjectList.FindSerializableObjects();
+            List<@object> newList = ObjectList.FindSerializableObjects();
+            JsonSerializer.Serialize(newList);
         }
     }
 
