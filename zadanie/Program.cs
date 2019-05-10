@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,14 @@ namespace zadanie
     {
         static void Main(string[] args)
         {
+            string startupPath = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, "\\source\\input.xml");
+            XmlReader.Read(startupPath);
+            ObjectList.FindSerializableObjects();
         }
     }
+
+
+   
+
+
 }

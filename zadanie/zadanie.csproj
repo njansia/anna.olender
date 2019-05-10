@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Obj.cs" />
+    <Compile Include="ObjectList.cs" />
+    <Compile Include="XmlReader.cs" />
+    <Compile Include="objectField.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
