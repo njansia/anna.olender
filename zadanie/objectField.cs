@@ -76,7 +76,7 @@ namespace zadanie
                 {
                     if (type.ToLower().CompareTo("string") == 0) //string
                     {
-                        return true;//czy wszystko moze byc stringiem ?? a jak do stringa liczba przypisana to co
+                        return true;
                     }
                     else//int
                     {

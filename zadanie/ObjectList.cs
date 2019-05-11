@@ -30,8 +30,7 @@ namespace zadanie
             foreach (@object o in list)
             {
                 @object newO = new @object();
-
-                //Console.WriteLine(o.IsObjectCorrect());
+                
                 if (o.IsObjectCorrect())
                 {
                     newO.obj_name = o.obj_name;
