@@ -1,6 +1,5 @@
 <object> 
 <obj_name>hero_profile 1</obj_name> 
-<kupa>z</kupa>
 <field> 
 <name>favorite_fruit</name> <type>string</type> <value>Truskawa</value> </field> 
 
