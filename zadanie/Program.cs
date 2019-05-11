@@ -4,17 +4,18 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace zadanie
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string startupPath = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, "\\source\\input.xml");
-            XmlReader.Read(startupPath);
+            string basePath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase)));
+            string path = basePath+ @"\source\input.xml";
+            string localPath = new Uri(path).LocalPath;
+            XmlReader.Read(localPath);
             List<@object> newList = ObjectList.FindSerializableObjects();
-            JsonSerializer.Serialize(newList);
+            JsonSerializer.Serialize(basePath,newList);
         }
     }
 

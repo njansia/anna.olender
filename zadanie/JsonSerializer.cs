@@ -11,10 +11,11 @@ namespace zadanie
     class JsonSerializer
     {
 
-        static public void Serialize(List<@object> list)
+        static public void Serialize(string basePath, List<@object> list)
         {
-            
-            File.WriteAllText(@"c:\source\data.json", CreateJsonString(list));
+            string path=basePath + @"\source\output.json";
+            string localPath = new Uri(path).LocalPath;
+            File.WriteAllText(localPath, CreateJsonString(list));
            
         }
         static public string CreateJsonString(List<@object> list)

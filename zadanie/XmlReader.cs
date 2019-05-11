@@ -10,19 +10,20 @@ namespace zadanie
 {
     class XmlReader
     {
-
         public static void Read(string path)
         {
             ObjectList.List = new List<@object>();
-           
+
             using (var reader = new StreamReader(path))
             {
+                string s = "<objects>" + File.ReadAllText(path) + "</objects>";
                 XmlSerializer deser = new XmlSerializer(typeof(List<@object>), new XmlRootAttribute("objects"));
-                ObjectList.List = (List<@object>)deser.Deserialize(reader);
+
+                using (var stringReader = new StringReader(s))
+                {
+                    ObjectList.List = (List<@object>)deser.Deserialize(stringReader);
+                }
             }
-
-            Console.Write(ObjectList.List.Count);
         }
-
     }
 }
